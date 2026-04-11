@@ -1,0 +1,218 @@
+[
+  {
+    "typeId": 3300,
+    "name": "Gunnery",
+    "rank": 1,
+    "description": "Foundation skill for turret weapons in the bootstrap dataset."
+  },
+  {
+    "typeId": 3303,
+    "name": "Small Projectile Turret",
+    "rank": 1,
+    "description": "Required for bootstrap projectile turrets."
+  },
+  {
+    "typeId": 3318,
+    "name": "Weapon Upgrades",
+    "rank": 2,
+    "description": "Improves access to weapon support modules."
+  },
+  {
+    "typeId": 3319,
+    "name": "Missile Launcher Operation",
+    "rank": 1,
+    "description": "Foundation skill for launcher-based weapons."
+  },
+  {
+    "typeId": 3320,
+    "name": "Rockets",
+    "rank": 1,
+    "description": "Bootstrap specialization for rocket launchers."
+  },
+  {
+    "typeId": 3321,
+    "name": "Light Missiles",
+    "rank": 2,
+    "description": "Required for light and heavy missile progression."
+  },
+  {
+    "typeId": 3324,
+    "name": "Heavy Missiles",
+    "rank": 3,
+    "description": "Bootstrap specialization for heavy missile launchers."
+  },
+  {
+    "typeId": 3327,
+    "name": "Spaceship Command",
+    "rank": 1,
+    "description": "Core ship command prerequisite."
+  },
+  {
+    "typeId": 3329,
+    "name": "Minmatar Frigate",
+    "rank": 2,
+    "description": "Bootstrap hull skill for Minmatar frigates."
+  },
+  {
+    "typeId": 3330,
+    "name": "Caldari Frigate",
+    "rank": 2,
+    "description": "Bootstrap hull skill for Caldari frigates."
+  },
+  {
+    "typeId": 3333,
+    "name": "Minmatar Cruiser",
+    "rank": 5,
+    "description": "Bootstrap hull skill for Minmatar cruisers."
+  },
+  {
+    "typeId": 3334,
+    "name": "Caldari Cruiser",
+    "rank": 5,
+    "description": "Bootstrap hull skill for Caldari cruisers."
+  },
+  {
+    "typeId": 3392,
+    "name": "Mechanics",
+    "rank": 1,
+    "description": "Core armor and structure skill."
+  },
+  {
+    "typeId": 3402,
+    "name": "Science",
+    "rank": 1,
+    "description": "Core prerequisite for several technical fitting skills."
+  },
+  {
+    "typeId": 3393,
+    "name": "Repair Systems",
+    "rank": 1,
+    "description": "Required for local armor repair modules."
+  },
+  {
+    "typeId": 3394,
+    "name": "Hull Upgrades",
+    "rank": 2,
+    "description": "Required for armor reinforcement and energized membrane modules."
+  },
+  {
+    "typeId": 3413,
+    "name": "Power Grid Management",
+    "rank": 1,
+    "description": "General fitting prerequisite in the bootstrap dataset."
+  },
+  {
+    "typeId": 3416,
+    "name": "Shield Operation",
+    "rank": 1,
+    "description": "Required for shield booster modules."
+  },
+  {
+    "typeId": 3420,
+    "name": "Tactical Shield Manipulation",
+    "rank": 4,
+    "description": "Required for advanced shield hardeners."
+  },
+  {
+    "typeId": 3422,
+    "name": "Shield Emission Systems",
+    "rank": 2,
+    "description": "Required for shield transporter modules."
+  },
+  {
+    "typeId": 3424,
+    "name": "Energy Grid Upgrades",
+    "rank": 2,
+    "description": "Required for capacitor flux coils, batteries, and cap rechargers."
+  },
+  {
+    "typeId": 3425,
+    "name": "Shield Upgrades",
+    "rank": 2,
+    "description": "Required for shield extenders in the bootstrap dataset."
+  },
+  {
+    "typeId": 3426,
+    "name": "CPU Management",
+    "rank": 1,
+    "description": "Core fitting skill used by electronics support paths."
+  },
+  {
+    "typeId": 3436,
+    "name": "Drones",
+    "rank": 1,
+    "description": "Core drone operation skill."
+  },
+  {
+    "typeId": 3432,
+    "name": "Scout Drone Operation",
+    "rank": 1,
+    "description": "Bootstrap drone specialization."
+  },
+  {
+    "typeId": 3433,
+    "name": "Sensor Linking",
+    "rank": 3,
+    "description": "Required for remote sensor booster modules."
+  },
+  {
+    "typeId": 3450,
+    "name": "Afterburner",
+    "rank": 1,
+    "description": "Required for afterburner propulsion modules."
+  },
+  {
+    "typeId": 3449,
+    "name": "Navigation",
+    "rank": 1,
+    "description": "Core prerequisite for propulsion skills."
+  },
+  {
+    "typeId": 33092,
+    "name": "Caldari Destroyer",
+    "rank": 2,
+    "description": "Bootstrap hull skill for Caldari destroyers."
+  },
+  {
+    "typeId": 33094,
+    "name": "Minmatar Destroyer",
+    "rank": 2,
+    "description": "Bootstrap hull skill for Minmatar destroyers."
+  },
+  {
+    "typeId": 33096,
+    "name": "Caldari Battlecruiser",
+    "rank": 6,
+    "description": "Bootstrap hull skill for Caldari battlecruisers."
+  },
+  {
+    "typeId": 3322,
+    "name": "Auto-Targeting Missiles",
+    "rank": 3,
+    "description": "Required for auto-targeting heavy missiles."
+  },
+  {
+    "typeId": 12305,
+    "name": "Drone Navigation",
+    "rank": 1,
+    "description": "Required for drone navigation computers."
+  },
+  {
+    "typeId": 12487,
+    "name": "Caldari Drone Specialization",
+    "rank": 5,
+    "description": "Required for advanced Caldari combat drones."
+  },
+  {
+    "typeId": 20211,
+    "name": "Heavy Missile Specialization",
+    "rank": 5,
+    "description": "Required for T2 heavy missile launchers and Fury heavy missiles."
+  },
+  {
+    "typeId": 24241,
+    "name": "Light Drone Operation",
+    "rank": 1,
+    "description": "Required for Tech II light drones."
+  }
+]

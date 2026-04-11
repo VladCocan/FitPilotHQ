@@ -1,0 +1,37 @@
+name: Feature request
+description: Suggest a new capability or improvement.
+title: "feature: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the use case or problem.
+      placeholder: I want to compare more than one fit against the same character set.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to happen?
+      description: Describe the proposed feature or change.
+      placeholder: Add a workflow for comparing multiple fits in one session.
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: Why would this help?
+      description: Explain the value of the feature.
+      placeholder: It would reduce repeated copy and paste during theorycrafting.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Optional notes, examples, or constraints.
+    validations:
+      required: false

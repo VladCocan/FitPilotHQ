@@ -1,0 +1,525 @@
+[
+  {
+    "typeId": 587,
+    "name": "Rifter",
+    "groupName": "Frigate",
+    "categoryName": "Ship",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3327,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3329,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 10629,
+    "name": "125mm Gatling AutoCannon I",
+    "groupName": "Projectile Weapon",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3300,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3303,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 2514,
+    "name": "Rocket Launcher I",
+    "groupName": "Missile Launcher",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3320,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 3831,
+    "name": "Small Shield Extender I",
+    "groupName": "Shield Extender",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3425,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 2046,
+    "name": "400mm Steel Plates I",
+    "groupName": "Armor Plate",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3392,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3394,
+          "requiredLevel": 2
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 523,
+    "name": "Small Armor Repairer I",
+    "groupName": "Armor Repair Unit",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3392,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3393,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 2454,
+    "name": "Hobgoblin I",
+    "groupName": "Combat Drone",
+    "categoryName": "Drone",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3436,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3432,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 1195,
+    "name": "Cap Recharger I",
+    "groupName": "Capacitor Recharger",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3424,
+          "requiredLevel": 2
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 24698,
+    "name": "Drake",
+    "groupName": "Battlecruiser",
+    "categoryName": "Ship",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 33096,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 631,
+    "name": "Scythe",
+    "groupName": "Cruiser",
+    "categoryName": "Ship",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3333,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 3841,
+    "name": "Large Shield Extender II",
+    "groupName": "Shield Extender",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3425,
+          "requiredLevel": 4
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 22291,
+    "name": "Ballistic Control System II",
+    "groupName": "Ballistic Control System",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3318,
+          "requiredLevel": 4
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 501,
+    "name": "Heavy Missile Launcher I",
+    "groupName": "Missile Launcher",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 3596,
+    "name": "Medium Remote Shield Booster I",
+    "groupName": "Shield Transporter",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3422,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 1963,
+    "name": "Remote Sensor Booster I",
+    "groupName": "Remote Sensor Booster",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3433,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 19660,
+    "name": "Festival Launcher",
+    "groupName": "Festival Launcher",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": []
+    }
+  },
+  {
+    "typeId": 21898,
+    "name": "Republic Fleet EMP S",
+    "groupName": "Projectile Ammo",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": []
+    }
+  },
+  {
+    "typeId": 27327,
+    "name": "Caldari Navy Nova Rocket",
+    "groupName": "Rocket",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3320,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 1248,
+    "name": "Capacitor Flux Coil II",
+    "groupName": "Capacitor Flux Coil",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3424,
+          "requiredLevel": 4
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 10850,
+    "name": "Medium Shield Booster II",
+    "groupName": "Shield Booster",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3416,
+          "requiredLevel": 3
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 2281,
+    "name": "Multispectrum Shield Hardener II",
+    "groupName": "Shield Hardener",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3420,
+          "requiredLevel": 4
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 3496,
+    "name": "Medium Cap Battery II",
+    "groupName": "Capacitor Battery",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3424,
+          "requiredLevel": 3
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 12058,
+    "name": "10MN Afterburner II",
+    "groupName": "Afterburner",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3450,
+          "requiredLevel": 4
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 2410,
+    "name": "Heavy Missile Launcher II",
+    "groupName": "Missile Launcher",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 4
+        },
+        {
+          "skillTypeId": 20211,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 31802,
+    "name": "Medium Core Defense Field Purger I",
+    "groupName": "Rig Shield",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": []
+    }
+  },
+  {
+    "typeId": 31748,
+    "name": "Medium Kinetic Shield Reinforcer II",
+    "groupName": "Rig Shield",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": []
+    }
+  },
+  {
+    "typeId": 31378,
+    "name": "Medium Capacitor Control Circuit II",
+    "groupName": "Rig Capacitor",
+    "categoryName": "Module",
+    "published": true,
+    "dogma": {
+      "requiredSkills": []
+    }
+  },
+  {
+    "typeId": 2466,
+    "name": "Hornet II",
+    "groupName": "Combat Drone",
+    "categoryName": "Drone",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 24241,
+          "requiredLevel": 5
+        },
+        {
+          "skillTypeId": 12487,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3436,
+          "requiredLevel": 5
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 27489,
+    "name": "Legion Scourge Auto-Targeting Heavy Missile",
+    "groupName": "Auto-Targeting Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3322,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 27441,
+    "name": "Caldari Navy Scourge Heavy Missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 24511,
+    "name": "Inferno Fury Heavy Missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 20211,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 5
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 5
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 27447,
+    "name": "Caldari Navy Inferno Heavy Missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  }
+]

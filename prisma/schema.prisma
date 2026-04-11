@@ -1,0 +1,166 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String      @id @default(cuid())
+  eveUserId   BigInt?     @unique
+  email       String?     @unique
+  displayName String?
+  characters  Character[]
+  fits        Fit[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Character {
+  id                String               @id @default(cuid())
+  eveCharacterId    BigInt               @unique
+  userId            String
+  name              String
+  ownerHash         String?
+  corporationName   String?
+  allianceName      String?
+  esiAccessToken    String?              @db.Text
+  esiRefreshToken   String?              @db.Text
+  esiScopes         String[]             @default([])
+  esiTokenExpiresAt DateTime?
+  lastSyncedAt      DateTime?
+  totalSkillPoints  Int?
+  unallocatedSkillPoints Int?
+  skills            CharacterSkill[]
+  skillQueue        CharacterSkillQueue[]
+  attributes        CharacterAttributes?
+  fits              Fit[]
+  user              User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt         DateTime             @default(now())
+  updatedAt         DateTime             @updatedAt
+
+  @@index([userId])
+  @@index([name])
+  @@index([ownerHash])
+}
+
+model CharacterSkill {
+  id            String    @id @default(cuid())
+  characterId   String
+  skillTypeId   Int
+  activeLevel   Int
+  trainedLevel  Int
+  skillpoints   Int
+  character     Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@unique([characterId, skillTypeId])
+  @@index([skillTypeId])
+}
+
+model CharacterSkillQueue {
+  id                  String    @id @default(cuid())
+  characterId         String
+  queuePosition       Int
+  skillTypeId         Int
+  finishedLevel       Int
+  trainingStartSp     Int?
+  levelEndSp          Int?
+  startDate           DateTime?
+  finishDate          DateTime?
+  character           Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  @@unique([characterId, queuePosition])
+  @@index([skillTypeId])
+}
+
+model CharacterAttributes {
+  id                     String    @id @default(cuid())
+  characterId            String    @unique
+  intelligence           Int
+  memory                 Int
+  perception             Int
+  willpower              Int
+  charisma               Int
+  bonusRemaps            Int?
+  accruedRemapCooldownAt DateTime?
+  character              Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+}
+
+model SkillCatalog {
+  id            String              @id @default(cuid())
+  typeId        Int                 @unique
+  name          String
+  rank          Float?
+  description   String?
+  prerequisites SkillPrerequisite[] @relation("SkillPrerequisites")
+  dependents    SkillPrerequisite[] @relation("SkillDependents")
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+
+  @@index([name])
+}
+
+model SkillPrerequisite {
+  id                 String       @id @default(cuid())
+  skillId            String
+  prerequisiteSkillId String
+  requiredLevel      Int
+  skill              SkillCatalog @relation("SkillPrerequisites", fields: [skillId], references: [id], onDelete: Cascade)
+  prerequisiteSkill  SkillCatalog @relation("SkillDependents", fields: [prerequisiteSkillId], references: [id], onDelete: Cascade)
+  createdAt          DateTime     @default(now())
+
+  @@unique([skillId, prerequisiteSkillId])
+  @@index([prerequisiteSkillId])
+}
+
+model ItemDefinition {
+  id               String                 @id @default(cuid())
+  typeId           Int                    @unique
+  name             String
+  groupName        String?
+  categoryName     String?
+  published        Boolean                @default(true)
+  requirementSkills ItemRequirementSkill[]
+  createdAt        DateTime               @default(now())
+  updatedAt        DateTime               @updatedAt
+
+  @@index([name])
+}
+
+model ItemRequirementSkill {
+  id             String         @id @default(cuid())
+  itemId         String
+  skillTypeId    Int
+  requiredLevel  Int
+  source         String         @default("generated")
+  item           ItemDefinition @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@unique([itemId, skillTypeId])
+  @@index([skillTypeId])
+}
+
+model Fit {
+  id               String      @id @default(cuid())
+  userId           String?
+  characterId      String?
+  name             String?
+  eftText          String
+  analysisSnapshot Json?
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+  user             User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  character        Character?  @relation(fields: [characterId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([characterId])
+}

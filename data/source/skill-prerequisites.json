@@ -1,0 +1,172 @@
+[
+  {
+    "skillTypeId": 3303,
+    "prerequisiteTypeId": 3300,
+    "requiredLevel": 1
+  },
+  {
+    "skillTypeId": 3318,
+    "prerequisiteTypeId": 3300,
+    "requiredLevel": 2
+  },
+  {
+    "skillTypeId": 3320,
+    "prerequisiteTypeId": 3319,
+    "requiredLevel": 1
+  },
+  {
+    "skillTypeId": 3321,
+    "prerequisiteTypeId": 3319,
+    "requiredLevel": 2
+  },
+  {
+    "skillTypeId": 3324,
+    "prerequisiteTypeId": 3319,
+    "requiredLevel": 3
+  },
+  {
+    "skillTypeId": 3324,
+    "prerequisiteTypeId": 3321,
+    "requiredLevel": 3
+  },
+  {
+    "skillTypeId": 3329,
+    "prerequisiteTypeId": 3327,
+    "requiredLevel": 1
+  },
+  {
+    "skillTypeId": 3330,
+    "prerequisiteTypeId": 3327,
+    "requiredLevel": 1
+  },
+  {
+    "skillTypeId": 3333,
+    "prerequisiteTypeId": 3327,
+    "requiredLevel": 2
+  },
+  {
+    "skillTypeId": 3333,
+    "prerequisiteTypeId": 33094,
+    "requiredLevel": 3
+  },
+  {
+    "skillTypeId": 3334,
+    "prerequisiteTypeId": 3327,
+    "requiredLevel": 2
+  },
+  {
+    "skillTypeId": 3334,
+    "prerequisiteTypeId": 33092,
+    "requiredLevel": 3
+  },
+  {
+    "skillTypeId": 3393,
+    "prerequisiteTypeId": 3392,
+    "requiredLevel": 1
+  },
+  {
+    "skillTypeId": 3394,
+    "prerequisiteTypeId": 3392,
+    "requiredLevel": 1
+  },
+  {
+    "skillTypeId": 3416,
+    "prerequisiteTypeId": 3413,
+    "requiredLevel": 1
+  },
+  {
+    "skillTypeId": 3422,
+    "prerequisiteTypeId": 3413,
+    "requiredLevel": 3
+  },
+  {
+    "skillTypeId": 3422,
+    "prerequisiteTypeId": 3402,
+    "requiredLevel": 2
+  },
+  {
+    "skillTypeId": 3425,
+    "prerequisiteTypeId": 3413,
+    "requiredLevel": 2
+  },
+  {
+    "skillTypeId": 3425,
+    "prerequisiteTypeId": 3402,
+    "requiredLevel": 1
+  },
+  {
+    "skillTypeId": 3424,
+    "prerequisiteTypeId": 3413,
+    "requiredLevel": 2
+  },
+  {
+    "skillTypeId": 3424,
+    "prerequisiteTypeId": 3402,
+    "requiredLevel": 1
+  },
+  {
+    "skillTypeId": 3432,
+    "prerequisiteTypeId": 3436,
+    "requiredLevel": 1
+  },
+  {
+    "skillTypeId": 3433,
+    "prerequisiteTypeId": 3426,
+    "requiredLevel": 3
+  },
+  {
+    "skillTypeId": 3450,
+    "prerequisiteTypeId": 3449,
+    "requiredLevel": 1
+  },
+  {
+    "skillTypeId": 33092,
+    "prerequisiteTypeId": 3330,
+    "requiredLevel": 3
+  },
+  {
+    "skillTypeId": 33094,
+    "prerequisiteTypeId": 3329,
+    "requiredLevel": 3
+  },
+  {
+    "skillTypeId": 33096,
+    "prerequisiteTypeId": 3327,
+    "requiredLevel": 3
+  },
+  {
+    "skillTypeId": 33096,
+    "prerequisiteTypeId": 3334,
+    "requiredLevel": 3
+  },
+  {
+    "skillTypeId": 3322,
+    "prerequisiteTypeId": 3319,
+    "requiredLevel": 2
+  },
+  {
+    "skillTypeId": 12305,
+    "prerequisiteTypeId": 3436,
+    "requiredLevel": 4
+  },
+  {
+    "skillTypeId": 12487,
+    "prerequisiteTypeId": 3436,
+    "requiredLevel": 5
+  },
+  {
+    "skillTypeId": 20211,
+    "prerequisiteTypeId": 3319,
+    "requiredLevel": 1
+  },
+  {
+    "skillTypeId": 20211,
+    "prerequisiteTypeId": 3324,
+    "requiredLevel": 5
+  },
+  {
+    "skillTypeId": 24241,
+    "prerequisiteTypeId": 3436,
+    "requiredLevel": 1
+  }
+]

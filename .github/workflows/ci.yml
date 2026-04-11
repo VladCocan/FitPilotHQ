@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate bootstrap item requirements
+        run: npm run data:generate
+
+      - name: Validate datasets
+        run: npm run data:validate
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Fit regression tests
+        run: npm run test:fits
+
+      - name: Fit smoke runner
+        run: npm run smoke:fits
+
+      - name: Drake sample smoke
+        run: npm run smoke:drake-sample
+
+      - name: Fit coverage report
+        run: npm run report:fit-coverage
+
+      - name: Unknown item prioritization report
+        run: npm run report:unknown-items

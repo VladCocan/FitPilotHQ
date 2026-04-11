@@ -1,0 +1,37 @@
+name: Bug report
+description: Report a problem with current behavior.
+title: "bug: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: trying
+    attributes:
+      label: What were you trying to do?
+      description: Describe the action, route, API call, or workflow.
+      placeholder: I was trying to analyze a fit for a synced character.
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened?
+      description: Describe the actual behavior or error.
+      placeholder: The page returned an internal server error.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      placeholder: The fit analysis should have completed and returned readiness data.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Optional details such as OS, browser, container state, or commit.
+      placeholder: Ubuntu 24.04, Docker Compose, Chrome 135
+    validations:
+      required: false
