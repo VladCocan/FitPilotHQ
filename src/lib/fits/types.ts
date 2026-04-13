@@ -32,11 +32,20 @@ export type ItemRequirementSkillEntry = {
 export type ItemDefinitionEntry = {
   typeId: number;
   name: string;
+  normalizedName: string;
   groupName?: string | null;
   categoryName?: string | null;
   published: boolean;
   source: "generated" | "manual";
   requirementSkills: ItemRequirementSkillEntry[];
+};
+
+export type ItemAliasEntry = {
+  aliasNormalized: string;
+  canonicalTypeId: number;
+  canonicalName: string;
+  source: "manual" | "auto-sde" | "auto-esi";
+  confidenceScore?: number | null;
 };
 
 export type ParsedFitEntryKind = "ship" | "item" | "drone" | "charge";
@@ -102,6 +111,23 @@ export type CharacterAnalysisInput = {
 export type ResolvedFitItem = {
   entry: ParsedFitEntry;
   definition: ItemDefinitionEntry;
+  resolutionSource: "exact" | "alias" | "manual";
+  matchedName: string;
+  aliasNormalized?: string | null;
+};
+
+export type AutoResolvedAliasUse = {
+  originalName: string;
+  aliasNormalized: string;
+  canonicalTypeId: number;
+  canonicalName: string;
+  source: "auto-sde" | "auto-esi";
+  confidenceScore?: number | null;
+};
+
+export type DataWarning = {
+  code: string;
+  message: string;
 };
 
 export type FitRequirement = {
@@ -183,6 +209,8 @@ export type FitAnalysisResult = {
   readiness: ReadinessScore;
   unknownItems: UnknownFitItem[];
   unknownItemSuggestions: UnknownItemSuggestionSet[];
+  autoResolvedAliasesUsed: AutoResolvedAliasUse[];
+  dataWarnings: DataWarning[];
   debug?: FitAnalysisDebug;
 };
 

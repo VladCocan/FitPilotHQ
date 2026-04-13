@@ -7,6 +7,43 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum UnknownItemKind {
+  SHIP
+  ITEM
+  DRONE
+  CHARGE
+  IMPLANT
+  BOOSTER
+  SUBSYSTEM
+  UNKNOWN
+}
+
+enum UnknownItemObservationStatus {
+  PENDING
+  MATCHED
+  AMBIGUOUS
+  REJECTED
+}
+
+enum ItemResolutionCandidateSource {
+  SDE
+  ESI
+  LEXICAL
+  MANUAL
+}
+
+enum ItemAliasSource {
+  MANUAL
+  AUTO_SDE
+  AUTO_ESI
+}
+
+enum ReviewStatus {
+  ACCEPTED
+  PENDING
+  REJECTED
+}
+
 model User {
   id          String      @id @default(cuid())
   eveUserId   BigInt?     @unique
@@ -125,6 +162,7 @@ model ItemDefinition {
   id               String                 @id @default(cuid())
   typeId           Int                    @unique
   name             String
+  normalizedName   String                 @unique
   groupName        String?
   categoryName     String?
   published        Boolean                @default(true)
@@ -163,4 +201,52 @@ model Fit {
 
   @@index([userId])
   @@index([characterId])
+}
+
+model UnknownItemObservation {
+  id            String                       @id @default(cuid())
+  normalizedName String
+  originalName  String
+  kind          UnknownItemKind
+  sourceFitHash String?
+  firstSeenAt   DateTime                     @default(now())
+  lastSeenAt    DateTime                     @default(now())
+  seenCount     Int                          @default(1)
+  status        UnknownItemObservationStatus @default(PENDING)
+  lastError     String?
+  candidates    ItemResolutionCandidate[]
+
+  @@unique([normalizedName, kind])
+  @@index([status, lastSeenAt])
+}
+
+model ItemResolutionCandidate {
+  id                       String                      @id @default(cuid())
+  unknownItemObservationId String
+  candidateTypeId          Int?
+  candidateName            String
+  source                   ItemResolutionCandidateSource
+  confidenceScore          Float
+  confidenceReason         String
+  accepted                 Boolean                     @default(false)
+  createdAt                DateTime                    @default(now())
+  observation              UnknownItemObservation      @relation(fields: [unknownItemObservationId], references: [id], onDelete: Cascade)
+
+  @@index([unknownItemObservationId, accepted])
+  @@index([candidateTypeId])
+}
+
+model ItemAlias {
+  id             String          @id @default(cuid())
+  aliasNormalized String         @unique
+  canonicalTypeId Int
+  canonicalName   String
+  source         ItemAliasSource
+  confidenceScore Float?
+  reviewStatus   ReviewStatus    @default(PENDING)
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@index([reviewStatus])
+  @@index([canonicalTypeId])
 }

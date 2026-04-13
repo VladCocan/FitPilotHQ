@@ -1,7 +1,8 @@
 import type { Prisma, PrismaClient } from "@prisma/client";
 
 import { getSkillTrainingAttributes } from "@/lib/fits/skill-attributes";
-import type { ItemDefinitionEntry, SkillCatalogEntry } from "@/lib/fits/types";
+import type { ItemAliasEntry, ItemDefinitionEntry, SkillCatalogEntry } from "@/lib/fits/types";
+import { hasPrismaDelegate } from "@/lib/reference-data/prisma-recovery-support";
 
 type SkillCatalogRow = Prisma.SkillCatalogGetPayload<Record<string, never>>;
 type SkillPrerequisiteRow = Prisma.SkillPrerequisiteGetPayload<{
@@ -15,14 +16,24 @@ type ItemDefinitionRow = Prisma.ItemDefinitionGetPayload<{
     requirementSkills: true;
   };
 }>;
+type ItemAliasRow = Prisma.ItemAliasGetPayload<Record<string, never>>;
 
 type AnalysisReferencePrismaClient = Pick<
   PrismaClient,
-  "skillCatalog" | "skillPrerequisite" | "itemDefinition"
+  "skillCatalog" | "skillPrerequisite" | "itemDefinition" | "itemAlias"
 >;
 
 export async function loadAnalysisReferenceData(prismaClient: AnalysisReferencePrismaClient) {
-  const [skillCatalogRows, prerequisiteRows, itemRows] = await Promise.all([
+  const loadAliases = hasPrismaDelegate(prismaClient, "itemAlias")
+    ? prismaClient.itemAlias.findMany({
+      where: {
+        reviewStatus: "ACCEPTED",
+      },
+      orderBy: { aliasNormalized: "asc" },
+    })
+    : Promise.resolve([] as ItemAliasRow[]);
+
+  const [skillCatalogRows, prerequisiteRows, itemRows, aliasRows] = await Promise.all([
     prismaClient.skillCatalog.findMany({
       orderBy: { typeId: "asc" },
     }),
@@ -44,6 +55,7 @@ export async function loadAnalysisReferenceData(prismaClient: AnalysisReferenceP
       },
       orderBy: { name: "asc" },
     }),
+    loadAliases,
   ]);
 
   const skillCatalog: SkillCatalogEntry[] = skillCatalogRows.map((skill: SkillCatalogRow) => ({
@@ -57,6 +69,7 @@ export async function loadAnalysisReferenceData(prismaClient: AnalysisReferenceP
   const itemDefinitions: ItemDefinitionEntry[] = itemRows.map((item: ItemDefinitionRow) => ({
     typeId: item.typeId,
     name: item.name,
+    normalizedName: item.normalizedName,
     groupName: item.groupName,
     categoryName: item.categoryName,
     published: item.published,
@@ -67,6 +80,20 @@ export async function loadAnalysisReferenceData(prismaClient: AnalysisReferenceP
       source: requirement.source,
     })),
   }));
+  const itemTypeIds = new Set(itemDefinitions.map((item) => item.typeId));
+  const itemAliases: ItemAliasEntry[] = aliasRows
+    .filter((alias: ItemAliasRow) => itemTypeIds.has(alias.canonicalTypeId))
+    .map((alias: ItemAliasRow) => ({
+      aliasNormalized: alias.aliasNormalized,
+      canonicalTypeId: alias.canonicalTypeId,
+      canonicalName: alias.canonicalName,
+      source: alias.source === "AUTO_ESI"
+        ? "auto-esi"
+        : alias.source === "AUTO_SDE"
+          ? "auto-sde"
+          : "manual",
+      confidenceScore: alias.confidenceScore,
+    }));
 
   const prerequisiteEdges = prerequisiteRows.map((prerequisite: SkillPrerequisiteRow) => ({
     skillTypeId: prerequisite.skill.typeId,
@@ -78,5 +105,6 @@ export async function loadAnalysisReferenceData(prismaClient: AnalysisReferenceP
     skillCatalog,
     prerequisiteEdges,
     itemDefinitions,
+    itemAliases,
   };
 }

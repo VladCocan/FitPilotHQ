@@ -521,5 +521,277 @@
         }
       ]
     }
+  },
+  {
+    "typeId": 209,
+    "name": "Scourge Heavy Missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 208,
+    "name": "Inferno Heavy Missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 206,
+    "name": "Nova Heavy Missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 207,
+    "name": "Mjolnir Heavy Missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 2629,
+    "name": "Scourge Fury Heavy Missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 20211,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 5
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 5
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 24507,
+    "name": "Nova Fury Heavy Missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 20211,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 5
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 5
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 24509,
+    "name": "Mjolnir Fury Heavy Missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 20211,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 5
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 5
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 27453,
+    "name": "Caldari Navy Nova Heavy Missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 27435,
+    "name": "Caldari Navy Mjolnir Heavy Missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 27495,
+    "name": "Legion Inferno Auto-Targeting Heavy Missile",
+    "groupName": "Auto-Targeting Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3322,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 27501,
+    "name": "Legion Nova Auto-Targeting Heavy Missile",
+    "groupName": "Auto-Targeting Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3322,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 27483,
+    "name": "Legion Mjolnir Auto-Targeting Heavy Missile",
+    "groupName": "Auto-Targeting Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": [
+        {
+          "skillTypeId": 3322,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3324,
+          "requiredLevel": 1
+        },
+        {
+          "skillTypeId": 3319,
+          "requiredLevel": 1
+        }
+      ]
+    }
+  },
+  {
+    "typeId": 28999,
+    "name": "Optimal Range Script",
+    "groupName": "Script",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": []
+    }
+  },
+  {
+    "typeId": 29001,
+    "name": "Tracking Speed Script",
+    "groupName": "Script",
+    "categoryName": "Charge",
+    "published": true,
+    "dogma": {
+      "requiredSkills": []
+    }
   }
 ]

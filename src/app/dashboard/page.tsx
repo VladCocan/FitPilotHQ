@@ -106,6 +106,12 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
           >
             Open comparison tool
           </Link>
+          <Link
+            className="rounded-full border border-white/10 px-5 py-3 text-sm text-slate-200 transition hover:border-white/30"
+            href="/admin/reference-data"
+          >
+            Review reference data
+          </Link>
           <form action="/api/auth/logout" method="post">
             <button
               className="rounded-full border border-white/10 px-5 py-3 text-sm text-slate-200 transition hover:border-ember hover:text-white"

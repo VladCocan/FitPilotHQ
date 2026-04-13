@@ -20,6 +20,7 @@ function assert(condition, message) {
 const skills = await loadJson("data/source/skills.catalog.json");
 const prerequisites = await loadJson("data/source/skill-prerequisites.json");
 const generatedItems = await loadJson("data/generated/item-requirements.generated.json");
+const generatedReport = await loadJson("data/generated/item-requirements.generated.report.json");
 
 const skillIds = new Set();
 const skillNames = new Set();
@@ -45,12 +46,21 @@ for (const prerequisite of prerequisites) {
 }
 
 const itemIds = new Set();
+const normalizedItemNames = new Set();
+const coverageByCategory = new Map();
+const coverageByGroup = new Map();
+let requirementLinkCount = 0;
 
 for (const item of generatedItems) {
   assert(Number.isInteger(item.typeId), `Item typeId must be an integer: ${JSON.stringify(item)}`);
   assert(typeof item.name === "string" && item.name.trim().length > 0, `Item name is required for typeId ${item.typeId}.`);
+  assert(typeof item.normalizedName === "string" && item.normalizedName.trim().length > 0, `Item normalizedName is required for typeId ${item.typeId}.`);
   assert(!itemIds.has(item.typeId), `Duplicate item typeId ${item.typeId}.`);
+  assert(!normalizedItemNames.has(item.normalizedName), `Duplicate normalized item name ${item.normalizedName}.`);
   itemIds.add(item.typeId);
+  normalizedItemNames.add(item.normalizedName);
+  coverageByCategory.set(item.categoryName ?? "Unknown", (coverageByCategory.get(item.categoryName ?? "Unknown") ?? 0) + 1);
+  coverageByGroup.set(item.groupName ?? "Unknown", (coverageByGroup.get(item.groupName ?? "Unknown") ?? 0) + 1);
 
   const seenSkillKeys = new Set();
 
@@ -65,9 +75,17 @@ for (const item of generatedItems) {
     const key = `${item.typeId}:${requirement.skillTypeId}`;
     assert(!seenSkillKeys.has(key), `Duplicate requirement ${key}.`);
     seenSkillKeys.add(key);
+    requirementLinkCount += 1;
   }
 }
+
+assert(generatedReport.seededItemCount === generatedItems.length, "Generated report item count does not match generated items.");
+assert(generatedReport.requirementLinkCount === requirementLinkCount, "Generated report requirement link count does not match generated items.");
 
 console.log(
   `Validated ${skills.length} skills, ${prerequisites.length} prerequisites, and ${generatedItems.length} generated items.`,
 );
+console.log(`Requirement links: ${requirementLinkCount}`);
+console.log(`Coverage by category: ${JSON.stringify(Object.fromEntries([...coverageByCategory.entries()].sort((left, right) => right[1] - left[1]).slice(0, 10)))}`);
+console.log(`Coverage by group: ${JSON.stringify(Object.fromEntries([...coverageByGroup.entries()].sort((left, right) => right[1] - left[1]).slice(0, 10)))}`);
+console.log(`Skipped items with reasons: ${generatedReport.skipped.length}`);

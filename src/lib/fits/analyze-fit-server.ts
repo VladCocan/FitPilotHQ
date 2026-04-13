@@ -6,6 +6,7 @@ import { analyzeFit } from "@/lib/fits/analyze-fit";
 import { loadAnalysisReferenceData } from "@/lib/fits/analysis-reference-data";
 import { compareFit } from "@/lib/fits/compare-fit";
 import { phaseFourSampleFit } from "@/lib/fits/sample-fit";
+import { observeUnknownFitItems } from "@/lib/reference-data/unknown-item-observations";
 import type {
   CharacterAnalysisInput,
 } from "@/lib/fits/types";
@@ -72,6 +73,29 @@ function assertCharacterReadyForAnalysis(character: {
   }
 }
 
+async function recordUnknownObservationsBestEffort(
+  fitText: string,
+  unknownItems: Array<{
+    name: string;
+    kind: "ship" | "item" | "drone" | "charge";
+    quantity: number;
+    reason: string;
+  }>,
+) {
+  if (unknownItems.length === 0) {
+    return;
+  }
+
+  try {
+    await observeUnknownFitItems(prisma, {
+      fitText,
+      unknownItems,
+    });
+  } catch (error) {
+    console.warn("Failed to persist unknown item observations.", error);
+  }
+}
+
 export async function analyzeFitForCharacter(characterId: string, fitText: string) {
   const [referenceData, character] = await Promise.all([
     loadAnalysisReferenceData(prisma),
@@ -101,11 +125,15 @@ export async function analyzeFitForCharacter(characterId: string, fitText: strin
 
   assertCharacterReadyForAnalysis(character);
 
-  return analyzeFit({
+  const result = analyzeFit({
     fitText,
     character: mapCharacterInput(character),
     ...referenceData,
   });
+
+  await recordUnknownObservationsBestEffort(fitText, result.unknownItems);
+
+  return result;
 }
 
 export async function analyzeFitForUserCharacter(
@@ -147,12 +175,16 @@ export async function analyzeFitForUserCharacter(
 
   assertCharacterReadyForAnalysis(character);
 
-  return analyzeFit({
+  const result = analyzeFit({
     fitText,
     character: mapCharacterInput(character),
     ...referenceData,
     includeDebug: options?.includeDebug,
   });
+
+  await recordUnknownObservationsBestEffort(fitText, result.unknownItems);
+
+  return result;
 }
 
 export async function compareFitForUserCharacters(
@@ -210,12 +242,19 @@ export async function compareFitForUserCharacters(
     return mapCharacterInput(character);
   });
 
-  return compareFit({
+  const result = compareFit({
     fitText,
     characters: orderedCharacters,
     ...referenceData,
     includeDebug: options?.includeDebug,
   });
+
+  await recordUnknownObservationsBestEffort(
+    fitText,
+    result.comparisons[0]?.analysis.unknownItems ?? [],
+  );
+
+  return result;
 }
 
 export async function getPhaseFourAnalyzerPreview(userId: string) {

@@ -7,8 +7,12 @@ const itemNameAliases: Record<string, string> = {
 
 const itemRequirementOverrides: Record<string, ItemDefinitionEntry> = {};
 
+export function resolveManualItemAliasTarget(name: string) {
+  return itemNameAliases[normalizeEveName(name)] ?? null;
+}
+
 export function resolveManualItemAlias(name: string) {
-  return itemNameAliases[normalizeEveName(name)] ?? normalizeEveName(name);
+  return resolveManualItemAliasTarget(name) ?? normalizeEveName(name);
 }
 
 export function resolveManualItemOverride(name: string) {

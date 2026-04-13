@@ -2,6 +2,7 @@ import { analyzeFit } from "@/lib/fits/analyze-fit";
 import type {
   CharacterAnalysisInput,
   FitComparisonResult,
+  ItemAliasEntry,
   ItemDefinitionEntry,
   SkillCatalogEntry,
 } from "@/lib/fits/types";
@@ -10,6 +11,7 @@ type CompareFitInput = {
   fitText: string;
   characters: CharacterAnalysisInput[];
   itemDefinitions: ItemDefinitionEntry[];
+  itemAliases?: ItemAliasEntry[];
   skillCatalog: SkillCatalogEntry[];
   prerequisiteEdges: Array<{
     skillTypeId: number;
@@ -47,6 +49,7 @@ export function compareFit({
   fitText,
   characters,
   itemDefinitions,
+  itemAliases,
   skillCatalog,
   prerequisiteEdges,
   includeDebug,
@@ -60,6 +63,7 @@ export function compareFit({
         fitText,
         character,
         itemDefinitions,
+        itemAliases,
         skillCatalog,
         prerequisiteEdges,
         includeDebug,

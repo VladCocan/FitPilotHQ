@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-04-11T21:58:15.413Z",
+  "seededItemCount": 46,
+  "requirementLinkCount": 74,
+  "coverageByCategory": {
+    "Module": 21,
+    "Charge": 20,
+    "Ship": 3,
+    "Drone": 2
+  },
+  "coverageByGroup": {
+    "Heavy Missile": 12,
+    "Auto-Targeting Heavy Missile": 4,
+    "Missile Launcher": 3,
+    "Shield Extender": 2,
+    "Combat Drone": 2,
+    "Rig Shield": 2,
+    "Script": 2,
+    "Frigate": 1,
+    "Projectile Weapon": 1,
+    "Armor Plate": 1,
+    "Armor Repair Unit": 1,
+    "Capacitor Recharger": 1,
+    "Battlecruiser": 1,
+    "Cruiser": 1,
+    "Ballistic Control System": 1,
+    "Shield Transporter": 1,
+    "Remote Sensor Booster": 1,
+    "Festival Launcher": 1,
+    "Projectile Ammo": 1,
+    "Rocket": 1,
+    "Capacitor Flux Coil": 1,
+    "Shield Booster": 1,
+    "Shield Hardener": 1,
+    "Capacitor Battery": 1,
+    "Afterburner": 1,
+    "Rig Capacitor": 1
+  },
+  "skipped": []
+}

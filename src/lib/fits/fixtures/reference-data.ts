@@ -2,6 +2,7 @@ import itemInput from "../../../../data/source/item-input.json";
 import skillPrerequisites from "../../../../data/source/skill-prerequisites.json";
 import skillCatalog from "../../../../data/source/skills.catalog.json";
 
+import { normalizeEveName } from "@/lib/fits/normalize";
 import { getSkillTrainingAttributes } from "@/lib/fits/skill-attributes";
 import type { ItemDefinitionEntry, SkillCatalogEntry } from "@/lib/fits/types";
 
@@ -49,6 +50,7 @@ export const benchmarkPrerequisiteEdges = (skillPrerequisites as SourceSkillPrer
 export const benchmarkItemDefinitions: ItemDefinitionEntry[] = (itemInput as SourceItem[]).map((item) => ({
   typeId: item.typeId,
   name: item.name,
+  normalizedName: normalizeEveName(item.name),
   groupName: item.groupName,
   categoryName: item.categoryName,
   published: item.published,

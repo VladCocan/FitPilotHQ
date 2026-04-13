@@ -1,20 +1,48 @@
-import { benchmarkCharacters } from "@/lib/fits/fixtures/characters";
-import { buildUnknownItemReport } from "@/lib/fits/fixture-reporting";
+import { PrismaClient } from "@prisma/client";
 
-const report = buildUnknownItemReport(benchmarkCharacters.rookie);
+const prisma = new PrismaClient();
 
-if (report.length === 0) {
-  console.log("No unknown items detected in benchmark fixtures.");
-  process.exit(0);
+async function main() {
+  const [observations, matchedAliases] = await Promise.all([
+    prisma.unknownItemObservation.findMany({
+      orderBy: [
+        { seenCount: "desc" },
+        { lastSeenAt: "desc" },
+      ],
+      take: 25,
+    }),
+    prisma.itemAlias.count({
+      where: {
+        reviewStatus: "ACCEPTED",
+      },
+    }),
+  ]);
+
+  if (observations.length === 0) {
+    console.log("No unknown item observations recorded.");
+    return;
+  }
+
+  console.log(`Accepted aliases: ${matchedAliases}`);
+
+  for (const observation of observations) {
+    console.log(
+      [
+        observation.originalName,
+        `seen=${observation.seenCount}`,
+        `status=${observation.status.toLowerCase()}`,
+        `lastSeen=${observation.lastSeenAt.toISOString()}`,
+        `error=${observation.lastError ?? "none"}`,
+      ].join(" | "),
+    );
+  }
 }
 
-for (const entry of report) {
-  console.log(
-    [
-      entry.name,
-      `occurrences=${entry.occurrences}`,
-      `fixtures=${entry.fixtures.join(",")}`,
-      `reasons=${entry.reasons.join(" | ")}`,
-    ].join(" | "),
-  );
-}
+main()
+  .catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });

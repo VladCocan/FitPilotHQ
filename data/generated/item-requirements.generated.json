@@ -2,6 +2,7 @@
   {
     "typeId": 587,
     "name": "Rifter",
+    "normalizedName": "rifter",
     "groupName": "Frigate",
     "categoryName": "Ship",
     "published": true,
@@ -21,6 +22,7 @@
   {
     "typeId": 10629,
     "name": "125mm Gatling AutoCannon I",
+    "normalizedName": "125mm gatling autocannon i",
     "groupName": "Projectile Weapon",
     "categoryName": "Module",
     "published": true,
@@ -40,6 +42,7 @@
   {
     "typeId": 2514,
     "name": "Rocket Launcher I",
+    "normalizedName": "rocket launcher i",
     "groupName": "Missile Launcher",
     "categoryName": "Module",
     "published": true,
@@ -59,6 +62,7 @@
   {
     "typeId": 3831,
     "name": "Small Shield Extender I",
+    "normalizedName": "small shield extender i",
     "groupName": "Shield Extender",
     "categoryName": "Module",
     "published": true,
@@ -73,6 +77,7 @@
   {
     "typeId": 2046,
     "name": "400mm Steel Plates I",
+    "normalizedName": "400mm steel plates i",
     "groupName": "Armor Plate",
     "categoryName": "Module",
     "published": true,
@@ -92,6 +97,7 @@
   {
     "typeId": 523,
     "name": "Small Armor Repairer I",
+    "normalizedName": "small armor repairer i",
     "groupName": "Armor Repair Unit",
     "categoryName": "Module",
     "published": true,
@@ -111,6 +117,7 @@
   {
     "typeId": 2454,
     "name": "Hobgoblin I",
+    "normalizedName": "hobgoblin i",
     "groupName": "Combat Drone",
     "categoryName": "Drone",
     "published": true,
@@ -130,6 +137,7 @@
   {
     "typeId": 1195,
     "name": "Cap Recharger I",
+    "normalizedName": "cap recharger i",
     "groupName": "Capacitor Recharger",
     "categoryName": "Module",
     "published": true,
@@ -144,6 +152,7 @@
   {
     "typeId": 24698,
     "name": "Drake",
+    "normalizedName": "drake",
     "groupName": "Battlecruiser",
     "categoryName": "Ship",
     "published": true,
@@ -158,6 +167,7 @@
   {
     "typeId": 631,
     "name": "Scythe",
+    "normalizedName": "scythe",
     "groupName": "Cruiser",
     "categoryName": "Ship",
     "published": true,
@@ -172,6 +182,7 @@
   {
     "typeId": 3841,
     "name": "Large Shield Extender II",
+    "normalizedName": "large shield extender ii",
     "groupName": "Shield Extender",
     "categoryName": "Module",
     "published": true,
@@ -186,6 +197,7 @@
   {
     "typeId": 22291,
     "name": "Ballistic Control System II",
+    "normalizedName": "ballistic control system ii",
     "groupName": "Ballistic Control System",
     "categoryName": "Module",
     "published": true,
@@ -200,6 +212,7 @@
   {
     "typeId": 501,
     "name": "Heavy Missile Launcher I",
+    "normalizedName": "heavy missile launcher i",
     "groupName": "Missile Launcher",
     "categoryName": "Module",
     "published": true,
@@ -219,6 +232,7 @@
   {
     "typeId": 3596,
     "name": "Medium Remote Shield Booster I",
+    "normalizedName": "medium remote shield booster i",
     "groupName": "Shield Transporter",
     "categoryName": "Module",
     "published": true,
@@ -233,6 +247,7 @@
   {
     "typeId": 1963,
     "name": "Remote Sensor Booster I",
+    "normalizedName": "remote sensor booster i",
     "groupName": "Remote Sensor Booster",
     "categoryName": "Module",
     "published": true,
@@ -247,6 +262,7 @@
   {
     "typeId": 19660,
     "name": "Festival Launcher",
+    "normalizedName": "festival launcher",
     "groupName": "Festival Launcher",
     "categoryName": "Module",
     "published": true,
@@ -255,6 +271,7 @@
   {
     "typeId": 21898,
     "name": "Republic Fleet EMP S",
+    "normalizedName": "republic fleet emp s",
     "groupName": "Projectile Ammo",
     "categoryName": "Charge",
     "published": true,
@@ -263,6 +280,7 @@
   {
     "typeId": 27327,
     "name": "Caldari Navy Nova Rocket",
+    "normalizedName": "caldari navy nova rocket",
     "groupName": "Rocket",
     "categoryName": "Charge",
     "published": true,
@@ -282,6 +300,7 @@
   {
     "typeId": 1248,
     "name": "Capacitor Flux Coil II",
+    "normalizedName": "capacitor flux coil ii",
     "groupName": "Capacitor Flux Coil",
     "categoryName": "Module",
     "published": true,
@@ -296,6 +315,7 @@
   {
     "typeId": 10850,
     "name": "Medium Shield Booster II",
+    "normalizedName": "medium shield booster ii",
     "groupName": "Shield Booster",
     "categoryName": "Module",
     "published": true,
@@ -310,6 +330,7 @@
   {
     "typeId": 2281,
     "name": "Multispectrum Shield Hardener II",
+    "normalizedName": "multispectrum shield hardener ii",
     "groupName": "Shield Hardener",
     "categoryName": "Module",
     "published": true,
@@ -324,6 +345,7 @@
   {
     "typeId": 3496,
     "name": "Medium Cap Battery II",
+    "normalizedName": "medium cap battery ii",
     "groupName": "Capacitor Battery",
     "categoryName": "Module",
     "published": true,
@@ -338,6 +360,7 @@
   {
     "typeId": 12058,
     "name": "10MN Afterburner II",
+    "normalizedName": "10mn afterburner ii",
     "groupName": "Afterburner",
     "categoryName": "Module",
     "published": true,
@@ -352,6 +375,7 @@
   {
     "typeId": 2410,
     "name": "Heavy Missile Launcher II",
+    "normalizedName": "heavy missile launcher ii",
     "groupName": "Missile Launcher",
     "categoryName": "Module",
     "published": true,
@@ -371,6 +395,7 @@
   {
     "typeId": 31802,
     "name": "Medium Core Defense Field Purger I",
+    "normalizedName": "medium core defense field purger i",
     "groupName": "Rig Shield",
     "categoryName": "Module",
     "published": true,
@@ -379,6 +404,7 @@
   {
     "typeId": 31748,
     "name": "Medium Kinetic Shield Reinforcer II",
+    "normalizedName": "medium kinetic shield reinforcer ii",
     "groupName": "Rig Shield",
     "categoryName": "Module",
     "published": true,
@@ -387,6 +413,7 @@
   {
     "typeId": 31378,
     "name": "Medium Capacitor Control Circuit II",
+    "normalizedName": "medium capacitor control circuit ii",
     "groupName": "Rig Capacitor",
     "categoryName": "Module",
     "published": true,
@@ -395,6 +422,7 @@
   {
     "typeId": 2466,
     "name": "Hornet II",
+    "normalizedName": "hornet ii",
     "groupName": "Combat Drone",
     "categoryName": "Drone",
     "published": true,
@@ -419,6 +447,7 @@
   {
     "typeId": 27489,
     "name": "Legion Scourge Auto-Targeting Heavy Missile",
+    "normalizedName": "legion scourge auto-targeting heavy missile",
     "groupName": "Auto-Targeting Heavy Missile",
     "categoryName": "Charge",
     "published": true,
@@ -443,6 +472,7 @@
   {
     "typeId": 27441,
     "name": "Caldari Navy Scourge Heavy Missile",
+    "normalizedName": "caldari navy scourge heavy missile",
     "groupName": "Heavy Missile",
     "categoryName": "Charge",
     "published": true,
@@ -462,6 +492,7 @@
   {
     "typeId": 24511,
     "name": "Inferno Fury Heavy Missile",
+    "normalizedName": "inferno fury heavy missile",
     "groupName": "Heavy Missile",
     "categoryName": "Charge",
     "published": true,
@@ -486,6 +517,7 @@
   {
     "typeId": 27447,
     "name": "Caldari Navy Inferno Heavy Missile",
+    "normalizedName": "caldari navy inferno heavy missile",
     "groupName": "Heavy Missile",
     "categoryName": "Charge",
     "published": true,
@@ -501,5 +533,293 @@
         "source": "generated"
       }
     ]
+  },
+  {
+    "typeId": 209,
+    "name": "Scourge Heavy Missile",
+    "normalizedName": "scourge heavy missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "requirementSkills": [
+      {
+        "skillTypeId": 3324,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3319,
+        "requiredLevel": 1,
+        "source": "generated"
+      }
+    ]
+  },
+  {
+    "typeId": 208,
+    "name": "Inferno Heavy Missile",
+    "normalizedName": "inferno heavy missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "requirementSkills": [
+      {
+        "skillTypeId": 3324,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3319,
+        "requiredLevel": 1,
+        "source": "generated"
+      }
+    ]
+  },
+  {
+    "typeId": 206,
+    "name": "Nova Heavy Missile",
+    "normalizedName": "nova heavy missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "requirementSkills": [
+      {
+        "skillTypeId": 3324,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3319,
+        "requiredLevel": 1,
+        "source": "generated"
+      }
+    ]
+  },
+  {
+    "typeId": 207,
+    "name": "Mjolnir Heavy Missile",
+    "normalizedName": "mjolnir heavy missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "requirementSkills": [
+      {
+        "skillTypeId": 3324,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3319,
+        "requiredLevel": 1,
+        "source": "generated"
+      }
+    ]
+  },
+  {
+    "typeId": 2629,
+    "name": "Scourge Fury Heavy Missile",
+    "normalizedName": "scourge fury heavy missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "requirementSkills": [
+      {
+        "skillTypeId": 20211,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3324,
+        "requiredLevel": 5,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3319,
+        "requiredLevel": 5,
+        "source": "generated"
+      }
+    ]
+  },
+  {
+    "typeId": 24507,
+    "name": "Nova Fury Heavy Missile",
+    "normalizedName": "nova fury heavy missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "requirementSkills": [
+      {
+        "skillTypeId": 20211,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3324,
+        "requiredLevel": 5,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3319,
+        "requiredLevel": 5,
+        "source": "generated"
+      }
+    ]
+  },
+  {
+    "typeId": 24509,
+    "name": "Mjolnir Fury Heavy Missile",
+    "normalizedName": "mjolnir fury heavy missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "requirementSkills": [
+      {
+        "skillTypeId": 20211,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3324,
+        "requiredLevel": 5,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3319,
+        "requiredLevel": 5,
+        "source": "generated"
+      }
+    ]
+  },
+  {
+    "typeId": 27453,
+    "name": "Caldari Navy Nova Heavy Missile",
+    "normalizedName": "caldari navy nova heavy missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "requirementSkills": [
+      {
+        "skillTypeId": 3324,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3319,
+        "requiredLevel": 1,
+        "source": "generated"
+      }
+    ]
+  },
+  {
+    "typeId": 27435,
+    "name": "Caldari Navy Mjolnir Heavy Missile",
+    "normalizedName": "caldari navy mjolnir heavy missile",
+    "groupName": "Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "requirementSkills": [
+      {
+        "skillTypeId": 3324,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3319,
+        "requiredLevel": 1,
+        "source": "generated"
+      }
+    ]
+  },
+  {
+    "typeId": 27495,
+    "name": "Legion Inferno Auto-Targeting Heavy Missile",
+    "normalizedName": "legion inferno auto-targeting heavy missile",
+    "groupName": "Auto-Targeting Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "requirementSkills": [
+      {
+        "skillTypeId": 3322,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3324,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3319,
+        "requiredLevel": 1,
+        "source": "generated"
+      }
+    ]
+  },
+  {
+    "typeId": 27501,
+    "name": "Legion Nova Auto-Targeting Heavy Missile",
+    "normalizedName": "legion nova auto-targeting heavy missile",
+    "groupName": "Auto-Targeting Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "requirementSkills": [
+      {
+        "skillTypeId": 3322,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3324,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3319,
+        "requiredLevel": 1,
+        "source": "generated"
+      }
+    ]
+  },
+  {
+    "typeId": 27483,
+    "name": "Legion Mjolnir Auto-Targeting Heavy Missile",
+    "normalizedName": "legion mjolnir auto-targeting heavy missile",
+    "groupName": "Auto-Targeting Heavy Missile",
+    "categoryName": "Charge",
+    "published": true,
+    "requirementSkills": [
+      {
+        "skillTypeId": 3322,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3324,
+        "requiredLevel": 1,
+        "source": "generated"
+      },
+      {
+        "skillTypeId": 3319,
+        "requiredLevel": 1,
+        "source": "generated"
+      }
+    ]
+  },
+  {
+    "typeId": 28999,
+    "name": "Optimal Range Script",
+    "normalizedName": "optimal range script",
+    "groupName": "Script",
+    "categoryName": "Charge",
+    "published": true,
+    "requirementSkills": []
+  },
+  {
+    "typeId": 29001,
+    "name": "Tracking Speed Script",
+    "normalizedName": "tracking speed script",
+    "groupName": "Script",
+    "categoryName": "Charge",
+    "published": true,
+    "requirementSkills": []
   }
 ]

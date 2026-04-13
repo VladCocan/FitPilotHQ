@@ -1,4 +1,5 @@
 import { normalizeEveName } from "@/lib/fits/normalize";
+import { RECOVERY_THRESHOLDS } from "@/lib/reference-data/recovery-thresholds";
 import type {
   ItemDefinitionEntry,
   ParsedFitEntryKind,
@@ -58,7 +59,7 @@ function buildMatchReason(sharedTokens: string[], sharedStems: string[]) {
   return "Closest known seeded item name.";
 }
 
-function scoreCandidate(unknownItem: UnknownFitItem, definition: ItemDefinitionEntry) {
+export function scoreUnknownItemCandidate(unknownItem: UnknownFitItem, definition: ItemDefinitionEntry) {
   const unknownNormalized = normalizeEveName(unknownItem.name);
   const definitionNormalized = normalizeEveName(definition.name);
   const unknownTokens = tokenize(unknownItem.name);
@@ -86,7 +87,7 @@ function scoreCandidate(unknownItem: UnknownFitItem, definition: ItemDefinitionE
     kindCategoryBonus(unknownItem.kind, definition) -
     Math.abs(unknownTokens.length - definitionTokens.length);
 
-  if (score <= 0) {
+  if (score < RECOVERY_THRESHOLDS.lexicalCandidateFloor) {
     return null;
   }
 
@@ -102,6 +103,16 @@ function scoreCandidate(unknownItem: UnknownFitItem, definition: ItemDefinitionE
   return suggestion;
 }
 
+export function rankUnknownItemCandidates(
+  unknownItem: UnknownFitItem,
+  itemDefinitions: ItemDefinitionEntry[],
+) {
+  return itemDefinitions
+    .map((definition) => scoreUnknownItemCandidate(unknownItem, definition))
+    .filter((candidate): candidate is UnknownItemSuggestion => candidate !== null)
+    .sort((left, right) => right.score - left.score || left.name.localeCompare(right.name));
+}
+
 export function suggestUnknownItems(
   unknownItems: UnknownFitItem[],
   itemDefinitions: ItemDefinitionEntry[],
@@ -113,11 +124,7 @@ export function suggestUnknownItems(
   }
 
   return [...uniqueUnknowns.values()].map((unknownItem): UnknownItemSuggestionSet => {
-    const suggestions = itemDefinitions
-      .map((definition) => scoreCandidate(unknownItem, definition))
-      .filter((candidate): candidate is UnknownItemSuggestion => candidate !== null)
-      .sort((left, right) => right.score - left.score || left.name.localeCompare(right.name))
-      .slice(0, 3);
+    const suggestions = rankUnknownItemCandidates(unknownItem, itemDefinitions).slice(0, 3);
 
     return {
       unknownItemName: unknownItem.name,

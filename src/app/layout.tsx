@@ -49,6 +49,14 @@ export default async function RootLayout({
                 </Link>
               ))}
               {userId ? (
+                <Link
+                  className="rounded-full border border-white/10 px-4 py-2 text-slate-200 transition hover:border-flux hover:text-white"
+                  href="/admin/reference-data"
+                >
+                  Reference Data
+                </Link>
+              ) : null}
+              {userId ? (
                 <form action="/api/auth/logout" method="post">
                   <button
                     className="rounded-full border border-white/10 px-4 py-2 text-slate-200 transition hover:border-ember hover:text-white"

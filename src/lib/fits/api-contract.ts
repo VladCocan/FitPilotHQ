@@ -48,6 +48,8 @@ function createFitAnalysisPayload(result: FitAnalysisResult) {
     trainingPlan: result.trainingPlan,
     unknownItems: result.unknownItems,
     unknownItemSuggestions: result.unknownItemSuggestions,
+    autoResolvedAliasesUsed: result.autoResolvedAliasesUsed,
+    dataWarnings: result.dataWarnings,
     debug: result.debug,
   };
 }

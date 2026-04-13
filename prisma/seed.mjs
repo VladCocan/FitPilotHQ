@@ -9,6 +9,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const workspaceRoot = path.resolve(__dirname, "..");
 
+function normalizeName(value) {
+  return value.trim().replace(/\s+/g, " ").toLowerCase();
+}
+
 async function loadJson(relativePath) {
   const fullPath = path.join(workspaceRoot, relativePath);
   return JSON.parse(await readFile(fullPath, "utf8"));
@@ -65,6 +69,7 @@ async function main() {
       where: { typeId: item.typeId },
       update: {
         name: item.name,
+        normalizedName: item.normalizedName ?? normalizeName(item.name),
         groupName: item.groupName,
         categoryName: item.categoryName,
         published: item.published,
@@ -72,6 +77,7 @@ async function main() {
       create: {
         typeId: item.typeId,
         name: item.name,
+        normalizedName: item.normalizedName ?? normalizeName(item.name),
         groupName: item.groupName,
         categoryName: item.categoryName,
         published: item.published,

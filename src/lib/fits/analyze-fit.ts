@@ -5,8 +5,10 @@ import { scoreReadiness } from "@/lib/fits/readiness";
 import { buildTrainingPlan } from "@/lib/fits/training-plan";
 import { suggestUnknownItems } from "@/lib/fits/unknown-item-suggestions";
 import type {
+  DataWarning,
   CharacterAnalysisInput,
   FitAnalysisResult,
+  ItemAliasEntry,
   ItemDefinitionEntry,
   SkillCatalogEntry,
   SkillDependency,
@@ -16,6 +18,7 @@ type AnalyzeFitInput = {
   fitText: string;
   character: CharacterAnalysisInput;
   itemDefinitions: ItemDefinitionEntry[];
+  itemAliases?: ItemAliasEntry[];
   skillCatalog: SkillCatalogEntry[];
   prerequisiteEdges: Array<{
     skillTypeId: number;
@@ -29,6 +32,7 @@ export function analyzeFit({
   fitText,
   character,
   itemDefinitions,
+  itemAliases,
   skillCatalog,
   prerequisiteEdges,
   includeDebug,
@@ -58,6 +62,7 @@ export function analyzeFit({
   const requirementResolution = resolveFitRequirements(
     parsedFit,
     itemDefinitions,
+    itemAliases ?? [],
     skillCatalogById,
     prerequisitesBySkillId,
   );
@@ -80,6 +85,13 @@ export function analyzeFit({
     requirementResolution.unknownItems,
     itemDefinitions,
   );
+  const dataWarnings: DataWarning[] = [
+    ...parsedFit.warnings.map((message) => ({
+      code: "parsed_fit_warning",
+      message,
+    })),
+    ...requirementResolution.dataWarnings,
+  ];
 
   return {
     parsedFit,
@@ -92,6 +104,8 @@ export function analyzeFit({
     readiness,
     unknownItems: requirementResolution.unknownItems,
     unknownItemSuggestions,
+    autoResolvedAliasesUsed: requirementResolution.autoResolvedAliasesUsed,
+    dataWarnings,
     debug: includeDebug
       ? {
           parsedWarnings: parsedFit.warnings,
